@@ -44,7 +44,7 @@ $('#app').innerHTML=`<div class="flex gap-2 mb-3"><button class="${tr?'btn':'btn
 ${tr?`<label class="lb">${t('date')}</label><input id="dt" type="datetime-local" class="inp"><label class="lb">${t('size')}</label><select id="sz" class="inp">${sizeOpts()}</select>`:`<label class="lb">${t('desc')}</label><input id="ds" class="inp"><label class="lb">${t('weight')}</label><input id="wt" type="number" min="0" step="0.5" class="inp">`}
 <label class="lb">${t('notes')}</label><input id="nt" class="inp"><button class="btn mt-3" onclick="publish()">${t('publish')}</button></div>`}
 async function publish(){
-const b={from_wilaya:v('afw'),from_commune:v('afc'),to_wilaya:v('atw'),to_commune:v('atc'),notes:v('nt')};
+const b={from_wilaya:v('afromw'),from_commune:v('afromc'),to_wilaya:v('atow'),to_commune:v('atoc'),notes:v('nt')};
 if(!b.from_wilaya||!b.to_wilaya||!b.from_commune||!b.to_commune)return toast(t('fill'));
 let r;if(mode=='trip'){if(!v('dt'))return toast(t('fill'));r=await sb.from('trips').insert({...b,user_id:me.id,depart_at:new Date(v('dt')).toISOString(),size:v('sz')})}
 else{if(!v('ds'))return toast(t('fill'));r=await sb.from('parcels').insert({...b,sender_id:me.id,description:v('ds'),weight_kg:+v('wt')||null})}
