@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SaivEXPRESS</title>
+<meta name="theme-color" content="#0b8a4b">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="flex items-center justify-between px-4 py-3 bg-white border-b" style="border-color:var(--line)">
+  <div><div class="text-xl font-black" style="color:var(--g)">SaivEXPRESS</div><div id="tag" class="text-xs opacity-70"></div></div>
+  <select id="lang" class="inp" style="width:auto" onchange="setLang(this.value)"><option value="ar">العربية</option><option value="fr">Français</option><option value="en">English</option></select>
+</header>
+<main id="app" class="p-3 max-w-xl mx-auto"></main>
+<nav id="nav"></nav><div id="modal" onclick="if(event.target.id=='modal')closeModal()"></div><div id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.min.js"></script>
+<script src="supabaseConfig.js"></script><script src="i18n.js"></script><script src="app.js"></script>
+</body>
+</html>
